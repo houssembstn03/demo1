@@ -25,8 +25,7 @@ pipeline{
             sshagent(['tomcat-debian2']) {
    
                 sh """
-                scp -o StrictHostKeyChecking=no target/demo1.war  
-                root@192.168.1.15:/opt/tomcat/webapps/
+              
                 ssh root@192.168.1.15 /opt/tomcat/bin/shutdown.sh
                 ssh root@192.168.1.15 /opt/tomcat/bin/startup.sh
                 """
