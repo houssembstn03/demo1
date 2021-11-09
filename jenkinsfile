@@ -1,1 +1,22 @@
-
+pipeline{
+    agent any
+   tools{
+    maven 'maven-3.8.3'
+    }
+  environment{
+    PATH= "${PATH}"
+  }
+    stages{
+        stage("git checkout"){
+            steps{
+               git credentialsId: 'githubID', url: 'https://github.com/houssembstn03/demo1.git'
+            }
+        }
+        stage("maven build"){
+            steps{
+                sh "mvn clean package"
+            }
+            
+        }
+    }
+}
