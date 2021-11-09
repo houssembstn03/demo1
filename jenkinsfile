@@ -24,11 +24,10 @@ pipeline{
 
             sshagent(['tomcat-debian2']) {
    
-                sh """
+               
               
-                ssh houssem@192.168.1.15 /opt/tomcat/bin/shutdown.sh
-                ssh houssem@192.168.1.15 /opt/tomcat/bin/startup.sh
-                """
+                             echo "test"
+                
                  } 
             }
         }
