@@ -26,7 +26,7 @@ pipeline{
    
                
               sh"""
-              ssh houssem@192.168.1.15 
+              ssh -t houssem@192.168.1.15 
               """
                 
                  } 
