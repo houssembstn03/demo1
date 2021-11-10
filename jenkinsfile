@@ -26,7 +26,8 @@ pipeline{
    
                
               sh"""
-              ssh houssem@192.168.1.15 /opt/tomcat/bin/shutdown.sh
+               ssh -o StrictHostKeyChecking=no -l cloudbees 192.168.1.15 uname -a
+              
               """
                 
                  } 
