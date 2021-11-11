@@ -12,13 +12,13 @@ pipeline{
               git credentialsId: 'githubID', url: 'https://github.com/houssembstn03/demo1.git/'
             }
         }
-       /* stage("maven build"){
+        stage("maven build"){
             steps{
                 sh "mvn clean package"
                 sh "mv target/*.war target/demo1.war"
             }
             
-        }*/
+        }
         stage("deploy"){
             steps{
 
@@ -26,7 +26,8 @@ pipeline{
    
                
               sh"""
-               ssh houssem@192.168.1.17 /opt/tomcat/bin/startup.sh
+              scp -o StrictHostKeyChecking=no target/myweb.war houssem@192.168.1.17:/opt/tomcat/webapps/ 
+
               
               """
                 
